@@ -124,21 +124,33 @@
                       <a href="https://api.whatsapp.com/send?phone=3899167841&text=Ol%C3%A1,%20gostaria%20de%20adquirir%20o%20dom%C3%ADnio%20https://www.bazarmilcoisas.com.br/" class="card-footer-item">ALUGAR</a>
                       <a href="https://api.whatsapp.com/send?phone=3899167841&text=Ol%C3%A1,%20gostaria%20de%20adquirir%20o%20dom%C3%ADnio%20https://www.bazarmilcoisas.com.br/" class="card-footer-item">CONTATO</a>
                     </footer>
+                    
                   </div>
+                  <div id="compre"></div>
             </div>
         </div>
     </main>
-    <footer>
-
-    </footer>
+    
     <script>
+        function diaHora() {
+       
         const All = new Date();
         const dia = All.getDate();
         const mes = All.getMonth();
         const ano = All.getFullYear();
         const hora = All.getHours();
         const min = All.getMinutes();
-        document.querySelector('#horaAtual').innerHTML = `<p> ${hora}:${min} - ${dia}/${mes+1}/${ano} </p> `
+        const seg = All.getSeconds();
+        document.querySelector('#horaAtual').innerHTML = `<p> ${hora}:${min}:${seg} - ${dia}/${mes+1}/${ano} </p> `
+        const rando = Math.floor(Math.random()*2);
+        //const cor = "";
+        rando == 0 ? cor = 'is-danger' : cor = 'is-success';
+       
+        document.querySelector('#compre').innerHTML += `<a href="https://api.whatsapp.com/send?phone=3899167841&text=Ol%C3%A1,%20gostaria%20de%20adquirir%20o%20dom%C3%ADnio%20https://www.bazarmilcoisas.com.br/">
+            <h1 class="tag ${cor}">COMPRE AGORA</h1><br></p>
+        </a> `
+        }
+        setInterval(diaHora, 1000);
     </script>
 </body>
 </html>

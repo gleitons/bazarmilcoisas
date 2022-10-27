@@ -14,6 +14,16 @@ main {
 .cardsInfo > div {
     padding: 20px;
 }
+#compre {
+    width: 360px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px;
+}
+#compre  h1 {
+    margin: 10px;
+}
 
 @media (max-width:360px) {
     .cardsInfo {
