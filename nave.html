@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Nave</title>
+</head>
+<body>
+    <main>
+        <tbody id="nomes">
+            <table>
+                <thead>
+                    <th>
+                        Nome:
+                    </th>
+                    <th>
+                        Árvore
+                    </th>
+                    <tbody id="Dadoss">
+                        
+                    </tbody>
+                </thead>
+            </table>
+        </div>
+    </main>
+
+    <script>
+        const family = [{
+        nome:"Gleiton",
+        root:"Pai"
+    },
+    {
+        nome:"João Miguel",
+        root:"Filho"
+    },
+    {
+        nome:"Natalia",
+        root:"Mamãe"
+    }
+];
+    const familiaS = JSON.stringify(family);
+    const familySA = JSON.parse(familiaS);
+    
+    familySA.map((infoF) => {
+
+        document.querySelector('#Dadoss').innerHTML += `
+                            <td>
+                                ${infoF.nome}
+                            </td>
+                            <td>
+                                ${infoF.root}
+                            </td>
+                        </tbody>`
+    })   
+        
+    </script>
+    
+    <!-- <script>
+        function slowL(velocity, message) {
+            let desacellation = 1;
+
+            while(velocity > 0) {
+
+                message(velocity);
+                velocity -= desacellation;
+                if(velocity <= 0) {
+                    console.log('Velocidade atual 0')
+                }
+            }
+            console.log(`A nave está parada, as comportas podem ser abertas`);
+
+        }
+        let spaceShit = 100;
+
+        slowL(spaceShit, (velocity) => {
+            console.log(`Velocidade atual ${velocity}`)
+        })
+    </script> -->
+
+    <!-- <script>
+        function doubleVelocity(velocity, printer) {
+            console.log('Entrou em velocidade Máxima');
+            let newVelocity = velocity * 2;
+            printer(newVelocity);
+            return newVelocity;
+        }
+        let printVelocity = (velocity) => {
+            console.log(`Nova velocidade ${velocity} Km/h`)
+        }
+        let newVelocity = doubleVelocity(80, printVelocity);
+        console.log(newVelocity)
+    </script> -->
+    <!-- <script>
+        function piloto() {
+        const nome = prompt('Digite o nome do piloto');
+        const velocidade = prompt('Digite a velocidade')
+        
+
+        if (velocidade == 0) {
+            alert('A nave está parada')
+        } else if(velocidade > 0 && velocidade <= 40) {
+            alert('A nave está muito devagar, aumente a velocidade')
+        } else if(velocidade > 40 && velocidade <= 80) {
+            alert('Parece uma boa velocidade, vamos manter')
+        } else if(velocidade > 80 && velocidade <= 100) {
+            alert('Velocidade Alta, diminua')
+        } else {
+            alert('Velocidade perigos, acionamento do freio')
+        }
+        alert(`O piloto ${nome} estava a ${velocidade} KM/h`)
+
+        
+    }
+    piloto()
+    </script> -->
+</body>
+</html>
